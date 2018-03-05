@@ -1,9 +1,9 @@
 <?php
+
 include 'IDatabase.php';
 include 'StrategyPDO.php';
 include 'StrategyMySQL.php';
 include 'StrategyMySQLi.php';
-
 
 class StrategyDatabase {
 
@@ -26,11 +26,13 @@ class StrategyDatabase {
         }
     }
 
-    function querys($sql) {
-        return $this->strategy->query($sql);
+    function all(string $table, array $seleccion_campo = null, string $order = null) {
+        return $this->strategy->search($table, $seleccion_campo, $order);
+    }
+
+    function allId(string $table, array $search, array $datos, string $order = null) {
+        return $this->strategy->searchId($table, $search, $datos, $order);
     }
 
     //Mas metodos de la clase Database
 }
-
-

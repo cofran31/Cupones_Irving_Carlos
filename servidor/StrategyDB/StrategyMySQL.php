@@ -1,7 +1,5 @@
 <?php
 
-
-
 class StrategyMySQL implements IDatabase {
 
     protected $conn;
@@ -11,15 +9,12 @@ class StrategyMySQL implements IDatabase {
         return $this->conn;
     }
 
-    public function query($sql) {
-        return mysql_query($sql, $this->conn);
-    }
+    public function search(string $table, array $seleccion_campo = null, string $order = null){}
+
+    public function searchId(string $table, array $search, array $datos, string $order = null){}
 
     public function close() {
         mysql_close($this->conn);
     }
 
-    function test(){
-        return "";
-    }
 }
