@@ -1,5 +1,5 @@
 <?php
 interface RenderableInterface
 {
-    public function renderData(): string;
+    public function renderData();
 }

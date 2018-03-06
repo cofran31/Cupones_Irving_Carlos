@@ -1,15 +1,17 @@
 <?php
-class Webservice implements RenderableInterface
+include 'Decorator/RenderableInterface.php';
+include 'Decorator/RendererDecorator.php';
+include 'Decorator/Decoradores.php';
+
+class WebPage implements RenderableInterface
 {
-    /**
-     * @var string
-     */
+
     private $data;
-    public function __construct(string $data)
+    public function __construct( $data)
     {
         $this->data = $data;
     }
-    public function renderData(): string
+    public function renderData()
     {
         return $this->data;
     }

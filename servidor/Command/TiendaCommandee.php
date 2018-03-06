@@ -14,12 +14,13 @@ class TiendaCommandee {
     }
 
     function getResponse() {
-        if (count($this->response) > 0) {
-            $this->jsondata["success"] = true;
-            $this->jsondata['response'] = $this->response;
-        } else
-            $this->jsondata["success"] = false;
-        return json_encode($this->jsondata);
+     //   if (count($this->response) > 0) {
+        //    $this->jsondata["success"] = true;
+       //     $this->jsondata['response'] = $this->response;
+      //  } else
+       //     $this->jsondata["success"] = false;
+        //return json_encode($this->jsondata);
+        return $this->response;
     }
 
 }
