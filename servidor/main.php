@@ -3,22 +3,43 @@
 include 'Command/TiendaCommandee.php';
 include 'Decorator/WebPage.php';
 
-$tienda = new TiendaCommandee();
-
+if ($_GET['opcion'] == 'menu') {
+    $tienda = new TiendaCommandee();
 //[objeto tienda], [tabla bd], [nombre atributos] , [valores de atributos], [orderby]
-//$commandAllProduct = new BuscarTiendaCommand($tienda, 'usuario', null, null, null);
-//$commandAllProduct->execute();
-//$data = $tienda->getResponse();
-
+    $commandAllProduct = new BuscarTiendaCommand($tienda, 'product_category', null, null, null);
+    $commandAllProduct->execute();
+    $data = $tienda->getResponse();
 //[objeto tienda], [tabla bd], [nombre atributos] , [valores de atributos], [orderby]
-$starsOff = new BuscarTiendaIdCommand($tienda, 'usuario', array('id'), array(1), null);
-$starsOff->execute();
-$data = $tienda->getResponse();
+//    $starsOff = new BuscarTiendaIdCommand($tienda, 'product_category', array('id'), array(37), null);
+    //  $starsOff->execute();
+    //   $data = $tienda->getResponse();
 
-$documento = new WebPage($data);
-$service = new JsonRenderer($documento);
-$proceso = $service->renderData();
-print_r($proceso);
+    $documento = new WebPage($data);
+    $service = new JsonRenderer($documento);
+    $proceso = $service->renderData();
+    print_r($proceso);
+} else if ($_GET['opcion'] == 'productos') {
+    $id_cat = $_GET['id_categoria'];
+    $tienda = new TiendaCommandee();
+//[objeto tienda], [tabla bd], [nombre atributos] , [valores de atributos], [orderby]
+ //   $commandAllProduct = new BuscarTiendaCommand($tienda, 'product_category', null, null, null);
+ //   $commandAllProduct->execute();
+ //   $data = $tienda->getResponse();
+//[objeto tienda], [tabla bd], [nombre atributos] , [valores de atributos], [orderby]
+    $starsOff = new BuscarTiendaIdCommand($tienda, 'product', array('id'), array($id_cat), null);
+    $starsOff->execute();
+    $data = $tienda->getResponse();
+
+    $documento = new WebPage($data);
+    $service = new JsonRenderer($documento);
+    $proceso = $service->renderData();
+    print_r($proceso);
+} else {
+    $jsondata = [];
+    $jsondata["success"] = false;
+    print_r(json_encode($jsondata));
+}
+  
 
 /*
 
