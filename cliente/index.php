@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!--
 author: W3layouts
 author URL: http://w3layouts.com
@@ -29,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- start-smoth-scrolling -->
         <script type="text/javascript" src="js/move-top.js"></script>
         <script type="text/javascript" src="js/easing.js"></script>
-        <script type="text/javascript" src="js/functions.js"></script>
+
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $(".scroll").click(function (event) {
@@ -47,6 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             }
 
         </style>
+        <script type="text/javascript" src="js/functions.js"></script>
     </head>
 
     <body>
@@ -83,13 +87,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </form>
             </div>
             <div class="product_list_header">  
-                <form action="#" method="post" class="last">
+          <!--      <form action="#" method="post" class="last">
                     <fieldset>
                         <input type="hidden" name="cmd" value="_cart" />
                         <input type="hidden" name="display" value="1" />
                         <input type="submit" name="submit" value="Mis Compras" class="button" />
                     </fieldset>
-                </form>
+                </form> -->
             </div>
 
             <div class="w3l_header_right1">
@@ -168,15 +172,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <!-- flexSlider SLIDER --> 
                 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
                 <script defer src="js/jquery.flexslider.js"></script>
-               <script type="text/javascript">
-            $(window).load(function () {
-                $('.flexslider').flexslider({
-                    animation: "slide",
-                    start: function (slider) {
-                        $('body').removeClass('loading');
-                    }
-                });
-            });
+                <script type="text/javascript">
+                            $(window).load(function () {
+                                $('.flexslider').flexslider({
+                                    animation: "slide",
+                                    start: function (slider) {
+                                        $('body').removeClass('loading');
+                                    }
+                                });
+                            });
                 </script>
                 <!-- //flexSlider -->
             </div>
@@ -184,14 +188,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="clearfix"> </div>
         <!-- top-brands -->
         <div class="top-brands">
-            <div class="container">
-                <h3>Hot Offers</h3>
-                
-                <div class="agile_top_brands_grids">
-                    
-                    
+            <div class="container" style="height:900px !important;padding-right: 5px !important;padding-left: 5px !important; margin-left: 5px !important;margin-right: 5px !important;">
+ 
+                <div style="width:100% !important">
+                    <div style="width:30% !important;float:left !important;">
+                        <iframe src="checkout.php"  name="nucleo"  frameborder="0" width="300" height="800"></iframe>
+                    </div>
+                    <div style="width: 70% !important;float:left !important;">
+                        <h3>Hot Offers</h3>
+                        <script>
+                        todos();
+                        </script>
+                        <div class="agile_top_brands_grids">
+
+
+                        </div>
+                    </div>
                 </div>
-               
             </div>
         </div>
         <!-- //top-brands -->
@@ -342,5 +355,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
 
         </script>
+
     </body>
 </html>

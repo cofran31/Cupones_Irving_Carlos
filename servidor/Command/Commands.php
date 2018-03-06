@@ -17,3 +17,21 @@ class BuscarTiendaIdCommand extends TiendaCommand {
     }
 
 }
+
+class BuscarProductPriceCommand extends TiendaCommand {
+
+    function execute() {
+        $query = $this->con->product_price($this->table, $this->atributos, $this->valores);
+        $this->tiendaCommandee->setResponse($query);
+    }
+
+}
+
+class BuscarAllProductPriceCommand extends TiendaCommand {
+
+    function execute() {
+        $query = $this->con->product_all_price($this->table, $this->atributos, $this->valores);
+        $this->tiendaCommandee->setResponse($query);
+    }
+
+}

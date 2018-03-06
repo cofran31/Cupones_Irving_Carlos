@@ -29,6 +29,31 @@ class StrategyPDO implements IDatabase {
         return parse_ini_file(APPPATH . '/config/config.ini');
     }
 
+    public function producto_all_precio(string $table, array $search = null, array $datos = null) {
+        $sql = "select product.id, product.product_name, product.product_category_id, product_pricing.base_price 
+               from product inner join product_pricing 
+               on product.id=product_pricing.product_id
+               LEFT JOIN product_category 
+               on product_category.id = product.product_category_id";
+        $this->query = $this->_connection->prepare($sql) or die(implode(':', $this->query->errorInfo()));
+        $this->query->execute() or die(implode(':', $this->query->errorInfo()));
+        return $this->query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function producto_precio(string $table, array $search = null, array $datos) {
+
+        $id_categoria = $datos[0];
+        $sql = "select product.id, product.product_name, product.product_category_id, product_pricing.base_price 
+               from product inner join product_pricing 
+               on product.id=product_pricing.product_id
+               LEFT JOIN product_category 
+               on product_category.id = product.product_category_id
+               WHERE product_category.id = $id_categoria ";
+        $this->query = $this->_connection->prepare($sql) or die(implode(':', $this->query->errorInfo()));
+        $this->query->execute() or die(implode(':', $this->query->errorInfo()));
+        return $this->query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function search(string $table, array $seleccion_campo = null, string $order = null) {
         $seleccion_campos = '';
         if ($seleccion_campo == null) {

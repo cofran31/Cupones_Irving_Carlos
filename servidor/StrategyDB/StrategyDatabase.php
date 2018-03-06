@@ -34,5 +34,13 @@ class StrategyDatabase {
         return $this->strategy->searchId($table, $search, $datos, $order);
     }
 
+    function product_price(string $table, array $search, array $datos) {
+        return $this->strategy->producto_precio($table, $search, $datos);
+    }
+
+    function product_all_price(string $table, array $search= null, array $datos= null) {
+        return $this->strategy->producto_all_precio($table, $search, $datos);
+    }
+
     //Mas metodos de la clase Database
 }
