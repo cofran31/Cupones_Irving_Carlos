@@ -1,4 +1,4 @@
-##### Proyecto Final - Módulo de cupones
+# Proyecto Final - Módulo de cupones
 ##### Maestrante: Irving Zenón Coronel Cabrera
 ##### Maestrante: Juan Carlos Ortube Lahor
 
