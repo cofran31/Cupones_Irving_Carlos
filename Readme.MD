@@ -1,32 +1,33 @@
 # Proyecto Final - Módulo de cupones
-##### Maestrante: Irving Zenón Coronel Cabrera
-##### Maestrante: Juan Carlos Ortube Lahor
+#### Maestrante: Irving Zenón Coronel Cabrera
+#### Maestrante: Juan Carlos Ortube Lahor
 
-##### ARQUITECTURA DE LA APLICACIÓN:
+## ARQUITECTURA DE LA APLICACIÓN:
 
 La aplicación está estructurada en una arquitectura cliente servidor.
 
 
-##### MÓDULOS IDENTIFICADOS DE LA APLICACIÓN:
+## MÓDULOS IDENTIFICADOS DE LA APLICACIÓN:
 
 Para el funcionamiento se identificó los siguientes modelos con sus respectivos patrones para su desarrollo:
 
 
-##### MÓDULO:
+## MÓDULOS :
+
 Manejo de lista de productos, compra y descuento de cupón  (CLIENTE)
-##### Prototype 
+### Prototype 
 
 Conexión de la Base datos (SERVIDOR)
-##### Strategy 
+## Strategy 
 
 Generación de Datos de salida renderizables (SERVIDOR)
-##### Decorator 
+### Decorator 
 
 Creacion de Consultas sencillas a travez de comandos de ejecucion de consultas.
-##### Command 
+### Command 
 
 
-##### CLIENTE 
+## CLIENTE 
 
 Manejo del patrón creacional Prototype para el uso del lado del cliente desarrollado en JavaScript.
 
@@ -35,9 +36,7 @@ Para este desarrollo nos basamo en la liberia minicart para que interactue direc
 A continuación mostramos el diagrama de clases para es uso del prototype en nuestro en la aplicación de lado del Cliente:
 
 
-
-
-##### SERVIDOR
+## SERVIDOR
 
 
 Para el desarrollo de los patrones de diseño de lado del servidor, implementamos los siguientes patrones de diseño:
@@ -47,6 +46,6 @@ Decorator.-  Es el encargado de renderizar la salida de informacion hacia nuestr
 Strategy.- Lo usamos como nuestro gestionador de conexiones de base de datos en nuestro caso tenemos 3 tipos de conexión a base de datos, la que utilizamos por defecto es la conexión StrategyPDO.php 
 
 
-##### NOTA ADICIONAL.- Lamentablemente no pudimos concluir por falta de tiempo, la falta de una visión general de donde implementar el patrón preciso hizo que se realicen varias pruebas antes de la implementación general de los patrones descuidando otras utilidades del software.
+# NOTA ADICIONAL.- Lamentablemente no pudimos concluir por falta de tiempo, la falta de una visión general de donde implementar el patrón preciso hizo que se realicen varias pruebas antes de la implementación general de los patrones descuidando otras utilidades del software.
 
-##### Por lo que pedimos que nos tome en cuenta la creación de los patrones como una manera de verdaderamente haber analizado correctamente el uso en una situación casi real.
+# Por lo que pedimos que nos tome en cuenta la creación de los patrones como una manera de verdaderamente haber analizado correctamente el uso en una situación casi real.
