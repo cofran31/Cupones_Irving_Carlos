@@ -14,17 +14,11 @@ Para el funcionamiento se identificó los siguientes modelos con sus respectivos
 
 ## MÓDULOS :
 
-Manejo de lista de productos, compra y descuento de cupón  (CLIENTE)
-### Prototype 
+Manejo de lista de productos, compra y descuento de cupón  (CLIENTE)(Prototype)
 
-Conexión de la Base datos (SERVIDOR)
-## Strategy 
-
-Generación de Datos de salida renderizables (SERVIDOR)
-### Decorator 
-
-Creacion de Consultas sencillas a travez de comandos de ejecucion de consultas.
-### Command 
+Conexión de la Base datos (SERVIDOR)(Strategy )
+Generación de Datos de salida renderizables (SERVIDOR)(Decorator)
+Creacion de Consultas sencillas a travez de comandos de ejecucion de consultas.(Command )
 
 
 ## CLIENTE 
